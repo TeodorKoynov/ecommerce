@@ -9,10 +9,37 @@ import {toast} from "react-hot-toast";
 
 import {useStateContext} from "@/context/StateContext";
 import {urlFor} from "../../sanity/lib/client";
+import getStripe from "@/lib/getStripe";
 
 function Cart() {
     const cartRef = useRef();
     const {totalPrice, totalQuantities, cartItems, setShowCart, onRemove, toggleCartItemQuantity} = useStateContext();
+
+    const handleCheckout = async () => {
+        const stripe = await getStripe();
+
+        const response = await fetch('/api/stripe-1', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({cartItems: cartItems}),
+        });
+
+        if (response.status === 400) {
+            console.log("Retuurn")
+            return;
+        }
+
+        console.log("Not")
+
+        console.log("Response", response)
+        const data = await response.json();
+
+        toast.loading('Redirecting...');
+
+        await stripe.redirectToCheckout({sessionId: data.id})
+    }
 
     return (<div className={"cart-wrapper"} ref={cartRef}>
         <div className={"cart-container"}>
@@ -96,7 +123,7 @@ function Cart() {
                         <button
                             type={"button"}
                             className={"btn"}
-                            // onClick={}
+                            onClick={handleCheckout}
                         >
                             Pay with Stripe
                         </button>
