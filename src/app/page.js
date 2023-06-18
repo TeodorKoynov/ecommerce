@@ -3,8 +3,6 @@ import HeroBanner from "@/components/HeroBanner";
 import FooterBanner from "@/components/FooterBanner";
 import {client} from "../../sanity/lib/client";
 
-import styles from './page.module.css'
-
 export default async function Home() {
 
     // todo abstraction
