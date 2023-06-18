@@ -35,7 +35,7 @@ function FooterBanner({
                     </Link>
                 </div>
 
-                <Image width={520} height={520} src={urlFor(image).toString()} className={"footer-banner-image"}></Image>
+                <Image alt={product.name} width={520} height={520} src={urlFor(image).toString()} className={"footer-banner-image"}></Image>
             </div>
         </div>
     )
