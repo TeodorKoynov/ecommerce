@@ -1,7 +1,11 @@
-import './globals.css'
-import {Inter} from 'next/font/google'
 import Navbar from "@/ui/Navbar";
 import Footer from "@/ui/Footer";
+import {StateContext} from "@/context/StateContext";
+import {Toaster} from "react-hot-toast";
+
+
+import './globals.css'
+
 
 export const metadata = {
     title: 'Create Next App',
@@ -13,13 +17,16 @@ export default function RootLayout({children}) {
         <html lang="en">
         <body>
         <div className={"layout"}>
-            <header>
-                <Navbar/>
-            </header>
+            <StateContext>
+                <header>
+                    <Navbar/>
+                </header>
 
-            <main className={"main-container"}>
-                {children}
-            </main>
+                <main className={"main-container"}>
+                    <Toaster/>
+                    {children}
+                </main>
+            </StateContext>
 
 
             <footer>
