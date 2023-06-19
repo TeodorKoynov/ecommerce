@@ -42,7 +42,10 @@ function Cart() {
     }
 
     return (
-        <div className={"cart-wrapper"} ref={cartRef}>
+        <>
+            <div className={"cart-wrapper-tint"} onClick={() => setShowCart(false)} ref={cartRef}>
+
+            </div>
             <div className={"cart-container"}>
                 <button
                     type={"button"}
@@ -131,8 +134,8 @@ function Cart() {
                         </div>
                     </div>
                 )}
-            </div>
-        </div>)
+            </div></>
+    )
 }
 
 export default Cart;
