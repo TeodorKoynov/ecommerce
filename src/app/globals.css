@@ -775,7 +775,9 @@ span.text-red {
     }
 
     .hero-banner-container h1 {
-        font-size: 50px;
+        font-size: 95px;
+        margin-top: -10px;
+        /*font-size: 50px;*/
     }
 
     .hero-banner-container h3 {
@@ -912,6 +914,15 @@ span.text-red {
         height: 56%;
     }
 
+    .hero-banner-container h1 {
+        font-size: 80px;
+        margin-left: -10px;
+    }
+
+    .hero-banner-container h3 {
+        font-size: 50px;
+    }
+
     .footer-banner-container {
         height: 600px;
         margin-top: 80px;
@@ -924,6 +935,11 @@ span.text-red {
         height: 42%;
         top: 15%;
         right: -6%;
+    }
+
+    .hero-banner-container h1 {
+        font-size: 60px;
+        margin-left: -10px;
     }
 
     .footer-banner-image {
