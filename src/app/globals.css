@@ -438,15 +438,12 @@ span.text-red {
 .product-detail-image{
   border-radius: 15px;
   background-color: #ebebeb;
-
   width: 400px;
   height: 400px;
-  cursor: pointer;
   transition: .3s ease-in-out;
 }
 .product-detail-image:hover{
-  background-color: #f02d34;
-
+  /*background-color: #f02d34;*/
 }
 .small-images-container{
   display: flex;
@@ -459,6 +456,7 @@ span.text-red {
   width: 70px;
   height: 70px;
   cursor: pointer;
+  -webkit-user-drag: none;
 }
 
 .selected-image{
