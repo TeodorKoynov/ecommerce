@@ -18,7 +18,7 @@ function ProductDetails({product}) {
 
     return (
         <div className={"product-detail-container"}>
-            <div>
+            <div className={"image-wrapper"}>
                 <div className={"image-container"}>
                     <Image
                         className={"product-detail-image"}
