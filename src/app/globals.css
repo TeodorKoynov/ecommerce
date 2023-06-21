@@ -725,6 +725,7 @@ span.text-red {
 @media screen and (max-width: 800px) {
     .hero-banner-container {
         height: 560px;
+        overflow: hidden;
     }
 
     .hero-banner-image {
@@ -733,6 +734,10 @@ span.text-red {
         /* top: -2%; */
         top: 8%;
         right: 6%;
+    }
+
+    .footer-banner-wrapper {
+        overflow: hidden;
     }
 
     /*.footer-banner-container {*/
